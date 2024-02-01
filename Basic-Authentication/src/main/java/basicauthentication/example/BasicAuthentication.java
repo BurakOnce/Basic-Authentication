@@ -52,5 +52,14 @@ public class BasicAuthentication implements CommandLineRunner {
 				.authorities(Set.of(Role.ROLE_ADMIN))
 				.build();
 		userService.createUser(request3);
+
+
+		CreateUserRequest request4 = CreateUserRequest.builder()
+				.name("Mr.Mustle")
+				.username("managermustle")
+				.password("1234")
+				.authorities(Set.of(Role.ROLE_MANAGER))
+				.build();
+		userService.createUser(request4);
 	}
 }
