@@ -33,8 +33,10 @@ public class SecurityConfig {
                             x
                                     .requestMatchers(mvcRequestBuilder.pattern("/free/**")).permitAll()
                                     .requestMatchers(mvcRequestBuilder.pattern("/secret/admin/**")).hasRole(Role.ROLE_ADMIN.getValue())
+                                    .requestMatchers(mvcRequestBuilder.pattern("/secret/manager/**")).hasRole(Role.ROLE_MANAGER.getValue())
                                     .requestMatchers(mvcRequestBuilder.pattern("/secret/**")).hasAnyRole(Role.ROLE_USER.getValue(),
                                             Role.ROLE_ADMIN.getValue(),
+                                            Role.ROLE_MANAGER.getValue(),
                                             Role.ROLE_SERDAR.getValue())
                                     .requestMatchers(PathRequest.toH2Console()).hasRole("ADMIN")
                                     .anyRequest().authenticated()
