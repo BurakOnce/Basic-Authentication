@@ -21,4 +21,8 @@ public class PrivateController {
     public String helloAdminPrivate() {
         return "Hello! from admin secret area";
     }
+    @GetMapping("/manager")
+    public String ManagerPrivate() {
+        return "It's Manager, keep up!";
+    }
 }
